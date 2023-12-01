@@ -33,7 +33,6 @@ export default function Home() {
                   />
               </svg>
               <p className='header-text'>Войдите в аккаунт</p>
-              
           </header>
           <main className="flex  items-center justify-center">
               <div className="flex  items-center justify-center">

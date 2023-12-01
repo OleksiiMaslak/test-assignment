@@ -26,6 +26,12 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+h1{
+  color: #70aabc;
+  font-size: 30px;
+  font-weight: 600;
+}
+
 header{ 
   background-color: #5db1bb;
   display: flex;
@@ -59,6 +65,7 @@ footer{
 main {
   min-height: 85vh;
   background-color: #fff;
+  color: #000;
 }
 
 fieldset{
@@ -88,6 +95,35 @@ fieldset p{
 
 .login-link{
   padding: 10px 25px;
+}
+
+.productListWrapper{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productLayout{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productsList{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1330px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+}
+
+.product {
+  display: flex;
+  margin: 20px;
+  padding: 5rem;
 }
 
 
