@@ -1,8 +1,18 @@
-import React from 'react'
+
+const fetchData = () => {
+  fetch(
+      "https://github.com/OleksiiMaslak/test-assignment/blob/master/src/data/db.json",
+      { cache: "no-store" }
+  ).then((res) => res.json());  
+}
 
 const ListOfProductsPage = () => {
+  const data = fetchData();
+  
   return (
-    <div>loginPage</div>
+    <main>
+      
+    </main>
   )
 }
 

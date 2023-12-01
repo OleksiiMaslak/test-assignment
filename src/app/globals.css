@@ -25,3 +25,80 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+header{ 
+  background-color: #5db1bb;
+  display: flex;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.logo-header{
+  margin-right: 15vw;
+  margin-left: 5vw;  
+}
+
+.header-text{
+  display: flex;
+  margin-right: 5vw;
+}
+
+.log-out{
+  margin-left: 55vw;
+}
+
+footer{
+    height: 5vh;
+    background-color: #5db1bb;
+    
+}
+
+main {
+  min-height: 85vh;
+  background-color: #fff;
+}
+
+fieldset{
+  margin-bottom: 15px;
+}
+
+fieldset p{
+  color: #000;
+  font-weight: 600;
+}
+
+.form-input{
+  border: 1px solid black;
+  border-radius: 5px;
+  line-height: 2;
+  padding: 5px 10px;
+  color: #000;
+}
+
+.login-button{
+  line-height: 2;
+  background-color: #5db1bb;
+  color: #fff;
+  padding: 0px;
+  border-radius: 5px;
+}
+
+.login-link{
+  padding: 10px 25px;
+}
+
+
+@media (max-width:1000px) {
+  .logo-header{
+    margin-right: 5vw;
+    margin-left: 1vw;  
+  }
+
+  .log-out{
+    margin-left: 15vw;
+  }
+
+}
