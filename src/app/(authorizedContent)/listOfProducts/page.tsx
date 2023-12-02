@@ -23,7 +23,7 @@ const ListOfProductsPage = async () => {
                   {" "}
                   {data.tabs.map((items: any) =>
                       items ? (
-                          <ProductItem key={items.SKU} data={items} />
+                          <ProductItem key={items.SKU} data ={items} />
                       ) : (
                           <p>no items</p>
                       )

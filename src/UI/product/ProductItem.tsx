@@ -1,11 +1,16 @@
 import Image from 'next/image'
 import {FC} from 'react'
+import IProductItem from './ProductItemInterface'
 
-const ProductItem: FC = (items : any) => {
+interface ProductItemProps {
+  data: IProductItem[]; 
+}
+
+const ProductItem: FC<ProductItemProps> = (items : any) => {
   console.log(items)
   return (
     <div className="product">
-      <Image src={items} alt={items.title} width={200} height={200} />
+      <Image src={items.data.ImageURL} alt='AAA' width={200} height={200} />
     </div>
   )
 }
