@@ -32,6 +32,12 @@ h1{
   font-weight: 600;
 }
 
+h3 {
+  color: #70aabc;
+  font-size: 20px;
+  font-weight: 600;
+}
+
 header{ 
   background-color: #5db1bb;
   display: flex;
@@ -118,13 +124,99 @@ fieldset p{
   align-items: center;
   align-content: center;
   flex-direction: row;
+  width: 100%;
 }
 
 .product {
+  min-width: 25%;
+  min-height: 25%;
   display: flex;
   margin: 20px;
-  padding: 5rem;
-  border: 1px solid black;
+  padding: 1rem;
+  border: 1px solid rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
+  flex-direction: column;
+
+}
+
+.product:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}
+
+.productListPhoto{
+  max-width: 200px;
+  max-height: 150px;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.productInfo{
+  margin-bottom: 1rem;
+}
+
+.productType{
+  font-size: 0.8rem;
+  color: rgb(0, 0, 0, 0.6);
+  font-weight: 700;
+}
+
+.productDescription{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.productRetailPrice{
+  color: #328b32;
+}
+
+.singleProductWrapper{
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.descriptionSection{
+  display: flex;
+  flex-direction: row;
+  gap: 15px ;
+  margin-bottom: 2rem;
+}
+
+.imageWrapper{
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  flex-basis: 50%;
+}
+
+.descriptionText{
+  flex: 1;
+  flex-basis: 50%;
+}
+
+.singleImage{
+  border: 1px solid rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
+  max-width: 50%;
+  width: 70vw;
+  padding: 5px;
+}
+.productSKU{
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.unitPrice{
+  color: #287b21;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 

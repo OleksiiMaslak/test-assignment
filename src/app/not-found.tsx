@@ -24,7 +24,7 @@ const NotFound = () => {
               </svg>
           </header>
           <main className="flex  items-center justify-center">
-              <p>Loadind...</p>
+              <p>404 | Not Found</p>
           </main>
           <footer></footer>
       </>
