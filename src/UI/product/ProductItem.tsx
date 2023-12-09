@@ -8,7 +8,7 @@ interface ProductItemProps {
 }
 
 const ProductItem: FC<ProductItemProps> = (items : any) => {
-  console.log(items)
+
   return (
     <Link href={`/products/${items.data.SKU}`} className="product">
       <Image className='productListPhoto' src={items.data.ImageURL} alt={items.data.Description} width={200} height={200} />

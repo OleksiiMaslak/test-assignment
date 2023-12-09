@@ -1,6 +1,8 @@
+
 import type { Metadata } from 'next'
 
 import Link from 'next/link'
+import LoginButton from '@/UI/product/loginButton'
 
 export const metadata: Metadata = {
   title: 'Test Assignment',
@@ -9,6 +11,7 @@ export const metadata: Metadata = {
 
 
 export default function Home() {
+
   return (
       <>
           {" "}
@@ -40,7 +43,7 @@ export default function Home() {
                       <fieldset>
                           <p> Логин</p>
                           <input
-                              type="text"
+                              type="email"
                               placeholder="Введите Email"
                               className="form-input"
                           />
@@ -48,17 +51,15 @@ export default function Home() {
                       <fieldset>
                           <p> Пароль</p>
                           <input
-                              type="text"
+                              type="password"
                               placeholder="Введите пароль"
                               className="form-input"
                           />
                       </fieldset>
 
-                      <button type="button" className="login-button">
-                          <Link href="/listOfProducts" className="login-link">
-                              Войти
-                          </Link>
-                      </button>
+
+                        <LoginButton/>
+
                   </form>
               </div>
           </main>

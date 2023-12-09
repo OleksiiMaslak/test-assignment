@@ -5,54 +5,64 @@ import getData from "@/app/api/getProductList";
 import Image from 'next/image'
 import ProductItem from '@/UI/product/ProductItem';
 import IProductItem from '@/UI/product/ProductItemInterface';
+import { useRouter } from 'next/navigation';
 
 const ProductDetails = ({ params }: { params: { productSKU: string } }) => {
   const [data, setData] = useState<any>(null);
+  const router = useRouter();
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await getData();
-        console.log(result);
-        return result
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    const makeDataList = async () => {
-      const list = await fetchData();
-      const arr : IProductItem[] = [];
-      list?.tabs.forEach((item: any) => {
-        if (item.SKU === params.productSKU) {
-          arr.push(item);
-          const itemNumber = list.tabs.indexOf(item);
-          if (list.tabs[itemNumber + 1] && list.tabs[itemNumber + 2]) {
-            arr.push(list.tabs[itemNumber + 1])
-            arr.push(list.tabs[itemNumber + 2])
-            arr.push(list.tabs[itemNumber + 3])
-          } else {
-            arr.push(list.tabs[itemNumber - 1])
-            arr.push(list.tabs[itemNumber - 2])
-            arr.push(list.tabs[itemNumber - 3])
-          }
+      if (!document.cookie.includes('auth=true')) {
+          console.log(document.cookie);
           
-        }
-      })
-      setData(arr);
-      
-      return arr
-    }
+          router.push("/");
+      } else {
+          const fetchData = async () => {
+              try {
+                  const result = await getData();
 
-    makeDataList();
+                  return result;
+              } catch (error) {
+                  console.error("Error fetching data:", error);
+              }
+          };
 
+          const makeDataList = async () => {
+              const list = await fetchData();
+              const arr: IProductItem[] = [];
+              list?.tabs.forEach((item: any) => {
+                  if (item.SKU === params.productSKU) {
+                      arr.push(item);
+                      const itemNumber = list.tabs.indexOf(item);
+                      if (
+                          list.tabs[itemNumber + 1] &&
+                          list.tabs[itemNumber + 2] &&
+                          list.tabs[itemNumber + 3]
+                      ) {
+                          arr.push(list.tabs[itemNumber + 1]);
+                          arr.push(list.tabs[itemNumber + 2]);
+                          arr.push(list.tabs[itemNumber + 3]);
+                      } else {
+                          arr.push(list.tabs[itemNumber - 1]);
+                          arr.push(list.tabs[itemNumber - 2]);
+                          arr.push(list.tabs[itemNumber - 3]);
+                      }
+                  }
+              });
+              setData(arr);
+
+              return arr;
+          };
+
+          makeDataList();
+      }
   }, [params.productSKU]);
 
-  console.log(data);
+
   
 
   return (
-      <main>
+      <div>
           {data ? (
               <>
                   <main className="flex item-center justify-center singleProductWrapper" >
@@ -82,7 +92,7 @@ const ProductDetails = ({ params }: { params: { productSKU: string } }) => {
           ) : (
               <p>Loading...</p>
           )}
-      </main>
+      </div>
   );
 };
 

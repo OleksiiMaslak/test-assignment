@@ -1,7 +1,21 @@
+"use client"
+
 import type {PropsWithChildren} from 'react';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function AuthorizedLayout({children}: PropsWithChildren<unknown>) {
+
+    const pathname = usePathname();
+
+    const router = useRouter()
+
+    const logout = (event:any) => {
+        event.preventDefault()
+        document.cookie = 'auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC;'        
+        router.push('/')
+      }
+
     return (
         <>
             <header className="login-header">
@@ -25,8 +39,8 @@ export default function AuthorizedLayout({children}: PropsWithChildren<unknown>)
                     />
                 </svg>
                 <div className='header-text'>
-                    <p>Продукция</p>
-                    <p className='log-out'><Link href='/'>Выйти из аккаунта</Link> </p>
+                    <p><Link href='/listOfProducts' className={pathname == '/listOfProducts' ? "active" : undefined} >Продукция</Link> </p>
+                    <a className='log-out' onClick={logout}>Выйти из аккаунта </a>
                 </div>
 
 
