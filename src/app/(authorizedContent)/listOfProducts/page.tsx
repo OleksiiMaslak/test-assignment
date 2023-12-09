@@ -45,7 +45,10 @@ const ListOfProductsPage = async () => {
                     </div>
                     <div className="pagination">
                         {Array(Math.ceil(data.tabs.length / itemsPerPage)).fill(null).map((_, index) => (
-                            <button onClick={() => paginate(index + 1)}>{index + 1}</button>
+                                                        <button 
+                                                        className={currentPage === index + 1 ? 'paginButton activeButton' : 'paginButton'} 
+                                                        onClick={() => paginate(index + 1)}
+                                                    >{index + 1}</button>
                         ))}
                     </div>
                 </div>

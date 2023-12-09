@@ -55,7 +55,7 @@ header{
 
 .header-text{
   display: flex;
-  margin-right: 5vw;
+  margin-right: 4vw;
 }
 
 .log-out{
@@ -115,6 +115,7 @@ fieldset p{
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 85vw;
 }
 
 .productsList{
@@ -235,6 +236,28 @@ a:hover{
   cursor: pointer;
 }
 
+.paginButton{
+  margin: 0 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 1s;
+}
+.paginButton:hover{
+  color: #0d136d;
+  text-decoration: underline;
+}
+
+.activeButton{
+  color: #0d136d;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: 2px solid #0d136d;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+
+
 
 @media (max-width:1000px) {
   .logo-header{
@@ -244,6 +267,17 @@ a:hover{
 
   .log-out{
     margin-left: 15vw;
+  }
+  .descriptionSection{
+    gap: 10px;
+    margin-bottom: 2rem;
+    padding: 0 15px;
+  }
+  .imageWrapper{
+    justify-content: center;
+  }
+  .singleImage{
+    min-width: 90%;
   }
 
 }
